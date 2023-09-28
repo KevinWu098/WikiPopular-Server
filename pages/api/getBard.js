@@ -50,7 +50,9 @@ export default function handler(req, res) {
                 })
                 .then((result) => {
                     // console.log(result[0].candidates[0].output);
-                    res.status(200).send(result[0].candidates[0].output);
+                    res.status(200).send(
+                        result[0].candidates[0]?.output ?? "ERROR"
+                    );
                 });
         });
     } catch (error) {
